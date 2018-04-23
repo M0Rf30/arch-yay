@@ -33,3 +33,5 @@ RUN yes y | pacman -Scc --noconfirm
 
 RUN locale-gen en_US.UTF-8
 ENV LC_CTYPE 'en_US.UTF-8'
+
+USER user

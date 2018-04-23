@@ -1,5 +1,5 @@
 # Define constants
-IMAGE_NAME?=arch-yay
+IMAGE_NAME?=m0rf30/arch-yay:latest
 
 all: build
 
