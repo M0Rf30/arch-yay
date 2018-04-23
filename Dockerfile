@@ -7,6 +7,8 @@ RUN pacman -Syyu --noconfirm --noprogressbar && \
     base-devel \
     ttf-roboto
 
+RUN yes y | pacman -Scc
+
 # Add user, group sudo
 RUN /usr/sbin/groupadd --system sudo && \
     /usr/sbin/useradd -m --groups sudo user && \
@@ -25,5 +27,9 @@ RUN cd /tmp && \
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
     echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+# Perform a clean
+RUN yes y | pacman -Scc --noconfirm
+
 RUN locale-gen en_US.UTF-8
 ENV LC_CTYPE 'en_US.UTF-8'
