@@ -5,6 +5,7 @@ LABEL authors="Niklas Heer <me@nheer.io>"
 RUN pacman -Syyu --noconfirm --noprogressbar && \
     pacman -S --noconfirm --needed --noprogressbar \
     base-devel \
+    git \
     ttf-roboto
 
 RUN yes y | pacman -Scc
