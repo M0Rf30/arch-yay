@@ -17,7 +17,7 @@ RUN /usr/sbin/groupadd --system sudo && \
     /usr/sbin/echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install yay - https://github.com/Jguer/yay
-ENV yay_version=8.922
+ENV yay_version=8.998
 ENV yay_folder=yay_${yay_version}_x86_64
 RUN cd /tmp && \
     curl -L https://github.com/Jguer/yay/releases/download/v${yay_version}/${yay_folder}.tar.gz | tar zx && \
