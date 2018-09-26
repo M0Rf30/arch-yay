@@ -22,7 +22,8 @@ ENV yay_folder=yay_${yay_version}_x86_64
 RUN cd /tmp && \
     curl -L https://github.com/Jguer/yay/releases/download/v${yay_version}/${yay_folder}.tar.gz | tar zx && \
     install -Dm755 ${yay_folder}/yay /usr/bin/yay && \
-    install -Dm644 ${yay_folder}/yay.8 /usr/share/man/man8/yay.8
+    install -Dm644 ${yay_folder}/yay.8 /usr/share/man/man8/yay.8 && \
+    rm -rf ${yay_folder}* 
 
 # Set correct locale
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
