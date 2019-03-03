@@ -29,7 +29,7 @@ RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
     echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # Perform a clean
-RUN pacman -Scc --noconfirm
+RUN yes | pacman -Scc --noconfirm
 
 RUN locale-gen en_US.UTF-8
 ENV LC_CTYPE 'en_US.UTF-8'
