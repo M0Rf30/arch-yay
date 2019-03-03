@@ -1,4 +1,4 @@
-FROM base/archlinux:latest
+FROM archlinux/base:latest
 LABEL authors="Niklas Heer <me@nheer.io>"
 
 # Base installation
