@@ -7,9 +7,7 @@ RUN pacman -Syyu --noconfirm --noprogressbar && \
     base-devel \
     git \
     ttf-roboto
-
-RUN yes y | pacman -Scc
-
+    
 # Add user, group sudo
 RUN /usr/sbin/groupadd --system sudo && \
     /usr/sbin/useradd -m --groups sudo user && \
