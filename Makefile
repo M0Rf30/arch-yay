@@ -6,8 +6,5 @@ all: build
 build:
 	docker build -t=$(IMAGE_NAME) .
 
-bash:
+run:
 	docker run -it --rm $(IMAGE_NAME) /bin/bash
-
-publish: build
-	bash publish.sh $(IMAGE_NAME) $(VERSION)
