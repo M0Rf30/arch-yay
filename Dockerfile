@@ -15,9 +15,8 @@ RUN /usr/sbin/groupadd --system sudo && \
     /usr/sbin/echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install yay - https://github.com/Jguer/yay
-RUN git clone https://aur.archlinux.org/yay.git && \
-    cd yay && \
-    makepkg -si
+RUN git clone https://aur.archlinux.org/yay.git && cd yay
+RUN makepkg -si
 
 # Set correct locale
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
