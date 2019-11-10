@@ -6,6 +6,7 @@ RUN pacman -Syyu --noconfirm --noprogressbar && \
     pacman -S --noconfirm --needed --noprogressbar \
     base-devel \
     git \
+    go \
     ttf-roboto
     
 # Add user, group sudo
@@ -15,9 +16,10 @@ RUN /usr/sbin/groupadd --system sudo && \
     /usr/sbin/echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install yay - https://github.com/Jguer/yay
-RUN git clone https://aur.archlinux.org/yay.git && cd yay
-RUN su - user -c "makepkg -s"
-RUN pacman -U yay-*
+RUN su - user -c "cd /home/user && git clone https://aur.archlinux.org/yay.git"
+RUN su - user -c "cd /home/user/yay && makepkg -s"
+RUN cd /home/user/yay && pacman -U yay-*.tar.xz --noconfirm
+RUN rm -rf /home/user/yay
 
 # Set correct locale
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
