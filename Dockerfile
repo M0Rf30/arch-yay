@@ -28,6 +28,7 @@ RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
 
 # Perform a clean
 RUN rm -rf /var/cache/pacman/pkg/*
+RUN rm -rf /home/user/.cache
 
 RUN locale-gen en_US.UTF-8
 ENV LC_CTYPE 'en_US.UTF-8'
