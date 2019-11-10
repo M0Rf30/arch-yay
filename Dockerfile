@@ -16,7 +16,8 @@ RUN /usr/sbin/groupadd --system sudo && \
 
 # Install yay - https://github.com/Jguer/yay
 RUN git clone https://aur.archlinux.org/yay.git && cd yay
-RUN makepkg -si
+RUN su - user -c "makepkg -s"
+RUN pacman -U yay-*
 
 # Set correct locale
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
