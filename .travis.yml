@@ -1,10 +1,14 @@
 language: bash
-
 services:
 - docker
-
 before_install:
 - docker build -t m0rf30/arch-yay .
+
+env:
+  global:
+  - secure: SU0iG4FddYmrvruWtjT2ZqiaqZ95uI9+HWit106f2dAicFoHDOnGRk11v97oikz9bGvmhlFVj9jB5PnpZbavbO0MQ8dKjYmoJbCTVNDfFkyEkRldBtIq3Rt2D/gqLMTy6e/wshhJeGhZf881+oUziq8x01v>
+  - secure: SJe1R9uwnVCvshEnlcJm1R1AYBR4DSU39xgRCdOk8T6uh8Q7ztwIoY6/tEEyzBUz9IRlmVRz255TlXXFF6mk73lAndhdFehavBm39mgdlOjaVXo3u3I9wCxjhq1FZ1Ak4IeMaMFbNcQn7kBl5LDg3CCkue2>
+
 
 deploy:
   provider: script
