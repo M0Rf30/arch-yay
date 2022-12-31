@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+      - cron: "0 6 * * 1"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +32,7 @@ jobs:
         with:
           images: m0rf30/arch-yay*
           labels: |
-            maintainer=Yap
+            maintainer=M0Rf30
             org.opencontainers.image.title=arch-yay
             org.opencontainers.image.description=Arch Linux Image with AUR support through yay
             org.opencontainers.image.vendor=M0Rf30
